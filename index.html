@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Entre Japón y México — Memorama educativo</title>
+  <meta
+    name="description"
+    content="Aplicación educativa e interactiva que relaciona conceptos de la filosofía japonesa con valores de la cultura mexicana mediante un memorama."
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Barra superior -->
+  <header class="top-bar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      Entre Japón y México
+    </div>
+    <nav aria-label="Navegación principal">
+      <a class="nav-link" href="perfil.html">Perfil del autor →</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Introducción -->
+    <section class="hero">
+      <span class="hero-eyebrow">日本 · México</span>
+      <h1>Entre <span>Japón</span> y México</h1>
+      <p>
+        Descubre, jugando, cómo algunos conceptos de la filosofía japonesa
+        encuentran puntos de conexión con valores y formas de pensar propias
+        de la cultura mexicana. Encuentra las parejas del memorama para
+        conocer cada relación.
+      </p>
+    </section>
+
+    <!-- Juego de memorama -->
+    <section class="board-panel" aria-label="Juego de memorama">
+      <div class="stats-bar">
+        <div class="stats-group">
+          <div class="stat">
+            <span class="stat-label">Movimientos</span>
+            <span class="stat-value" id="stat-moves">0</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Parejas encontradas</span>
+            <span class="stat-value" id="stat-pairs">0 / 6</span>
+          </div>
+        </div>
+        <button class="btn btn-ghost" id="restart-btn" type="button">
+          Reiniciar juego
+        </button>
+      </div>
+
+      <div class="memory-board" id="memory-board" role="grid" aria-label="Tablero de memorama">
+        <!-- Las 12 tarjetas se generan dinámicamente con script.js -->
+      </div>
+    </section>
+
+    <!-- Glosario de conceptos -->
+    <section class="concepts-panel" aria-label="Glosario de conceptos">
+      <div class="section-title">
+        <h2>Conceptos del recorrido</h2>
+        <span class="divider-line" aria-hidden="true"></span>
+      </div>
+      <div class="concepts-grid">
+        <article class="concept-card">
+          <h3>Kaizen 改善</h3>
+          <p>Mejora continua a través de pequeños cambios constantes.</p>
+        </article>
+        <article class="concept-card">
+          <h3>Ikigai 生き甲斐</h3>
+          <p>El propósito o razón de vivir de cada persona.</p>
+        </article>
+        <article class="concept-card">
+          <h3>Omotenashi おもてなし</h3>
+          <p>Hospitalidad y atención genuina hacia los demás.</p>
+        </article>
+        <article class="concept-card">
+          <h3>Gaman 我慢</h3>
+          <p>Perseverancia y paciencia frente a la adversidad.</p>
+        </article>
+        <article class="concept-card">
+          <h3>Wa 和</h3>
+          <p>Armonía, equilibrio y convivencia en comunidad.</p>
+        </article>
+        <article class="concept-card">
+          <h3>Mottainai もったいない</h3>
+          <p>Evitar el desperdicio y aprovechar los recursos.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  
+  <!-- Botón flotante de acceso al perfil -->
+  <a
+    class="fab-profile"
+    href="perfil.html"
+    aria-label="Ir al perfil del autor"
+    title="Perfil del autor"
+  >
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+      <circle cx="12" cy="7" r="4" />
+    </svg>
+  </a>
+
+  <!-- Overlay de victoria -->
+  <div class="victory-overlay" id="victory-overlay" role="dialog" aria-modal="true" aria-labelledby="victory-title">
+    <div class="victory-card">
+      <div class="victory-icon" aria-hidden="true">✓</div>
+      <h2 id="victory-title">¡Felicidades! Completaste el recorrido entre Japón y México.</h2>
+      <p>
+        Ahora conoces seis puntos de conexión entre la filosofía japonesa y
+        valores presentes en la cultura mexicana.
+      </p>
+      <div class="victory-stats">
+        <div class="stat">
+          <span class="stat-label">Movimientos totales</span>
+          <span class="stat-value" id="victory-moves">0</span>
+        </div>
+      </div>
+      <button class="btn" id="victory-restart-btn" type="button">Jugar de nuevo</button>
+      <br /><br />
+      <button class="btn btn-ghost" id="victory-close-btn" type="button">Cerrar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
